@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModal-label">Modal title</h4>
+                </div>
+
+                <div class="modal-body">
+                    <form role="form" class="form-horizontal">
+                        <!-- Treat items as a unit -->
+                        <!-- has-error changes color scheme -->
+                        <!-- has-feedback works together with form-control-feedback so that X will be placed correctly at
+            end of email control -->
+                        <div class="form-group has-feedback">
+                            <!-- Label for a form -->
+                            <label for="email" class="control-label col-md-3">Email:</label>
+                            <!-- Must do col-md-6 in a div because input will always take up the whole width -->
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" required="required" name="email" id="email" placeholder="Your email" />
+                                <!-- add an X at end of control -->
+                                <span class="glyphicon form-control-feedback"></span>
+                            </div>
+                        </div>
+                        <div class="form-group has-feedback">
+                            <label for="twitter" class="control-label col-md-3">Twitter:</label>
+                            <!-- Cannot place col-md-6 and input-group in same div because it's mixing width with
+                input group and causes @ to align incorrectly. -->
+                            <div class="col-md-6">
+                                <div class="input-group">
+                                    <!-- Add @ to front of all elements in group -->
+                                    <span class="input-group-addon">@</span>
+                                    <input type="text" class="form-control" name="twitter" id="twitter" required="required" placeholder="Twitter handle" />
+                                </div>
+                                <!-- add an X at end of control.  Note that this needs to be outside of input-group -->
+                                <span class="glyphicon form-control-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <!-- data-toggle - so that bootstrap converts elements to buttons -->
+                            <div class="col-md-offset-3 btn-group" data-toggle="buttons">
+                                <!-- default active -->
+                                <label class="btn btn-primary active">
+                                    <!-- use of same name so that radio buttons will tie together -->
+                                    <input type="radio" name="membership-level" id="gold" checked />Gold
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="membership-level" id="silver" />Silver
+                                </label>
+                                <label class="btn btn-primary">
+                                    <input type="radio" name="membership-level" id="bronze" />Bronze
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <!-- form-group automatically starts a new row so can use col-md- for elements -->
+                        <div class="form-group">
+                            <button type="button" class="btn btn-success col-md-4 col-md-offset-3">Submit Form</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="save">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <div class="alert alert-success hidden" id="success-alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h2>Saved Data</h2>
+            <div>Your information has been submitted.</div>
+        </div>
+    </div>
+
+    <!-- button to launch modal dialog -->
+    <div class="row">
+        <button type="button" class="col-md-offset-3 col-md-6 btn btn-success" data-toggle="modal" data-target="#myModal">Launch Modal</button>
+    </div>
+
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#save').click(function () {
+                var formValid = true;
+
+                // Loop thru every input control
+                $('input').each(function () {
+                    // this ==> input control, find its nearest ancestor with class .form-group
+                    var formGroup = $(this).parents('.form-group');
+                    
+                    // Find goes through all descendants, unlike children
+                    var glyphicon = formGroup.find('.glyphicon');
+
+                    // See if all controls are ok via checkValidity (including required fields are
+                    // filled in)
+                    if (this.checkValidity()) {
+                        formGroup.addClass('has-success').removeClass('has-error');
+                        glyphicon.addClass('glyphicon-ok').removeClass('glyphicon-remove');
+                    }
+                    else {
+                        formGroup.addClass('has-error').removeClass('has-success');
+                        glyphicon.addClass('glyphicon-remove').removeClass('glyphicon-ok');
+                        formValid = false;
+                    }
+                });
+
+                if (formValid) {
+                    $('#myModal').modal('hide');
+                    $('#success-alert').removeClass('hidden');
+                }
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+
+        <!-- Use snippet ctrl-k/ctrl-x -->
+        <div class="alert alert-warning alert-dismissable">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h2>Sample alert</h2>
+            <div>This is a simple alert.</div>
+            <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+        </div>
+
+        <!-- Horizontal element placement -->
+        <form role="form" class="form-horizontal">
+            <!-- Treat items as a unit -->
+            <!-- has-error changes color scheme -->
+            <!-- has-feedback works together with form-control-feedback so that X will be placed correctly at
+                end of email control -->
+            <div class="form-group has-error has-feedback">
+                <!-- Label for a form -->
+                <label for="email" class="control-label col-md-3">Email:</label>
+                <!-- Must do col-md-6 in a div because input will always take up the whole width -->
+                <div class="col-md-6">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Your email" />
+                    <!-- add an X at end of control -->
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+            </div>
+            <div class="form-group has-error has-feedback">
+                <label for="twitter" class="control-label col-md-3">Twitter:</label>
+                <!-- Cannot place col-md-6 and input-group in same div because it's mixing width with
+                    input group and causes @ to align incorrectly. -->
+                <div class="col-md-6">
+                    <div class="input-group has-error">
+                        <!-- Add @ to front of all elements in group -->
+                        <span class="input-group-addon">@</span>
+                        <input type="text" class="form-control" name="twitter" id="twitter" placeholder="Twitter handle" />
+                    </div>
+                    <!-- add an X at end of control.  Note that this needs to be outside of input-group -->
+                    <span class="glyphicon glyphicon-remove form-control-feedback"></span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <!-- data-toggle - so that bootstrap converts elements to buttons -->
+                <div class="col-md-offset-3 btn-group" data-toggle="buttons">
+                    <!-- default active -->
+                    <label class="btn btn-primary active">
+                        <!-- use of same name so that radio buttons will tie together -->
+                        <input type="radio" name="membership-level" id="gold" checked />Gold
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="membership-level" id="silver" />Silver
+                    </label>
+                    <label class="btn btn-primary">
+                        <input type="radio" name="membership-level" id="bronze" />Bronze
+                    </label>
+                </div>
+            </div>
+
+
+            <!-- form-group automatically starts a new row so can use col-md- for elements -->
+            <div class="form-group">
+                <button type="button" class="btn btn-success col-md-4 col-md-offset-3">Submit Form</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
