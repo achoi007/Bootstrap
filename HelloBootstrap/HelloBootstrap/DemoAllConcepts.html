@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Demo of all concepts</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Ultimate Demo</h1>
+            <p>A demo of all concepts in lectures</p>
+        </div>
+
+        <!-- 3 columns in all screens except phone -->
+        <div class="row">
+            <div class="col-sm-4 col-xs-6"><h3>First</h3>This is first column</div>
+            <div class="col-sm-4 col-xs-6"><h3>Second</h3>This is second column</div>
+            <div class="col-sm-4 col-xs-6"><h3>Third</h3>This is third column</div>
+        </div>
+
+        <!-- Nested columns -->
+        <div class="row">
+            <div class="col-sm-4"><h3>Unnested</h3></div>
+            <div class="col-sm-8">
+                <h3>Nested</h3>
+                <div class="row">
+                    <!-- 12 new columns here -->
+                    <div class="col-sm-4">Nested 1</div>
+                    <div class="col-sm-6">Nested 2</div>
+                    <div class="col-sm-2">Nested 3</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Control placements -->
+        <!-- offset - skipped columns, which will be left blank -->
+        <!-- push - move content to right.  blanks can be used by pull -->
+        <!-- pull - move content to left -->
+        <div class="row">
+            <!-- To center below, which is 8-cells wide.  So offset by 2 -->
+            <div class="col-md-4 col-md-offset-2"><h3>Center First</h3></div>
+            <div class="col-md-4"><h3>Center Second</h3></div>
+        </div>
+        <div class="row">
+            <!-- If space is running out, want to see very important on top -->
+            <!-- otherwise, very important on right, not so important on left -->
+            <!-- MOBILE FIRST:  Lay out how you want it to look on smallest device first -->
+            <div class="col-xs-12 col-md-6 col-md-push-6"><h3>Very important</h3></div>
+            <div class="col-xs-12 col-md-6 col-md-pull-6"><h3>Not so important</h3></div>
+        </div>
+
+        <!-- Visibility -->
+        <!-- 2 options: hidden (visibile by default) or visible (hidden by default) -->
+        <div>
+            <h2 class="visible-lg">Large</h2>
+            <h2 class="visible-md">Medium</h2>
+            <h2 class="visible-sm">Small</h2>
+            <h2 class="visible-xs">Extra Small</h2>
+            <h2 class="visible-print">Print</h2>
+        </div>
+    </div>
+
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>

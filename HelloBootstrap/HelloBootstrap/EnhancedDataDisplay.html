@@ -1,0 +1,171 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Enhanced Data Display</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Enhanced data display</h1>
+            <p>Tabs, Scrollspy, Accordian, and Carousel</p>
+        </div>
+
+        <!-- Tab -->
+        <div class="row">
+            <!-- use nav-tabs snippet -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="active"><a href="#Home" role="tab" data-toggle="tab">Home</a></li>
+                <li><a href="#Profile" role="tab" data-toggle="tab">Profile</a></li>
+                <li><a href="#Messages" role="tab" data-toggle="tab">Messages</a></li>
+            </ul>
+
+            <!-- tab content -->
+            <div class="tab-content">
+                <!-- active means current type -->
+                <!-- fade adds animation when switching tabs -->
+                <!-- in is needed to force fade-in due to fade animation -->
+                <div class="active tab-pane fade in" id="Home">
+                    <h2>Home</h2>
+                    <div>Sample home content</div>
+                </div>
+                <div class="tab-pane fade" id="Profile">
+                    <h2>Profile</h2>
+                    <div>Sample profile content</div>
+                </div>
+                <div class="tab-pane fade" id="Messages">
+                    <h2>Messages</h2>
+                    <div>Sample messages content</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scrollspy -->
+        <div class="row">
+            <!-- use navbar snippet -->
+            <nav class="navbar navbar-default navbar-static-top" role="navigation" id="navbar-spy">
+                <div class="collapse navbar-collapse">
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active"><a href="#scroll-first">First</a></li>
+                            <li><a href="#scroll-second">Second</a></li>
+                            <li><a href="#scroll-third">Third</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <div data-target="#navbar-spy" data-spy="scroll" style="height: 150px; overflow-y:scroll;">
+                <div id="scroll-first">
+                    <h2>First</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div id="scroll-second">
+                    <h2>Second</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div id="scroll-third">
+                    <h2>Third</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordian -->
+        <div class="row">
+            <!-- Use accordian snippet -->
+            <div class="panel-group" id="collapse">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#collapse" href="#collapse-one">
+                                Accordion heading 1
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse-one" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#collapse" href="#collapse-two">
+                                Accordion heading 2
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse-two" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Morbi eget libero quis metus consectetur semper.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#collapse" href="#collapse-three">
+                                Accordion heading 3
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapse-three" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Suspendisse ullamcorper massa eget eleifend iaculis.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="row">
+            <!-- use carousel snippet -->
+            <div id="my-carousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#my-carousel" data-slide-to="1"></li>
+                    <li data-target="#my-carousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img alt="First slide" src="http://placehold.it/1200x675&text=First+slide">
+                        <div class="carousel-caption">
+                            <h3>Caption heading 1</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="Second slide" src="http://placehold.it/1200x675&text=Second+slide">
+                        <div class="carousel-caption">
+                            <h3>Caption heading 2</h3>
+                            <p>Morbi eget libero quis metus consectetur semper.</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img alt="Third slide" src="http://placehold.it/1200x675&text=Third+slide">
+                        <div class="carousel-caption">
+                            <h3>Caption heading 3</h3>
+                            <p>Suspendisse ullamcorper massa eget eleifend iaculis.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#my-carousel" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#my-carousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="Scripts/jquery-2.1.3.min.js"></script>
+    <script src="Scripts/bootstrap.min.js"></script>
+</body>
+</html>
